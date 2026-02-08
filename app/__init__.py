@@ -1,1 +1,0 @@
-"""Via Persberichten Tool package."""
