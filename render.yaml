@@ -1,8 +1,0 @@
-services:
-  - type: web
-    name: via-persberichten-tool
-    env: node
-    plan: starter
-    buildCommand: npm install
-    startCommand: npm start
-    autoDeploy: true
