@@ -1,0 +1,21 @@
+{
+  "name": "via-persberichten-tool",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start -p ${PORT:-3000}",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.2.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "openai": "4.56.0",
+    "mammoth": "1.7.2",
+    "pdf-parse": "1.1.1",
+    "zod": "3.23.8"
+  }
+}
