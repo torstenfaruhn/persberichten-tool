@@ -1,0 +1,37 @@
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:#f5f7fb;color:#111}
+.header{background:#fff;border-bottom:1px solid #e6e9f2;padding:16px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:120px;height:auto}
+h1{margin:0;font-size:22px;font-weight:800}
+.introtext{margin:10px 0 0 0;max-width:900px;line-height:1.4}
+.wrap{max-width:1100px;margin:0 auto;padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width: 900px){.wrap{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid #e6e9f2;border-radius:12px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.label{display:block;font-weight:700;margin-bottom:8px}
+.input{width:100%;padding:12px;border:1px solid #cfd6ea;border-radius:10px;font-size:16px}
+.hint{margin-top:6px;color:#444}
+.file{margin:12px 0}
+.btncol{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.btn{padding:12px 14px;border:0;border-radius:10px;background:#0b63ce;color:#fff;font-size:16px;font-weight:700;cursor:pointer}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn.secondary{background:#516173}
+.btn.small{padding:8px 10px;font-size:14px}
+.snackbar{visibility:hidden;margin-top:12px;background:#111;color:#fff;padding:10px;border-radius:10px}
+.snackbar.show{visibility:visible}
+.signals{margin:10px 0 0 18px;line-height:1.4}
+.muted{color:#555}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:800;margin-right:8px}
+.badge.error{background:#ffe2e2;color:#8a0010}
+.badge.warning{background:#fff1c9;color:#7a4a00}
+.badge.info{background:#e7f0ff;color:#093d7a}
+.techbox{margin-top:14px;border-top:1px solid #e6e9f2;padding-top:12px}
+.techhead{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.techlog{background:#0b1020;color:#d7e1ff;padding:10px;border-radius:10px;overflow:auto;min-height:80px}
+.smalltext{font-size:14px;color:#333;line-height:1.4}
+.editor,.output{width:100%;min-height:280px;padding:12px;border:1px solid #cfd6ea;border-radius:10px;font-size:14px;line-height:1.4}
+.row{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
+.footer{padding:14px 16px;color:#333;background:#fff;border-top:1px solid #e6e9f2}
+
+
+.hintbox{margin-top:10px;padding:10px;border:1px solid #d39e00;background:#fff8e1;border-radius:10px;font-size:14px;line-height:1.3;}

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>VIA Persberichten-tool</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <img src="/static/logo.png" alt="VIA De Limburger" class="logo">
+      <h1>VIA Persberichten-tool</h1>
+    </div>
+    <p class="introtext">
+      Gebruik deze tool om ingezonden persberichten snel om te zetten naar een nieuwsconcept.
+      Upload een persbericht, laat de tool het document verwerken en download het resultaat.
+      De output is een concept en heeft altijd eindredactie nodig.
+    </p>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <label for="apiKey" class="label">Voer hier je API-key in en druk op Enter</label>
+      <input id="apiKey" type="password" autocomplete="off" class="input" placeholder="API-key">
+      <div class="hint">Zonder API-key kun je niet verder.</div>
+
+      <div class="btncol">
+        <input id="fileInput" type="file" accept=".txt,.docx,.pdf" class="file" />
+        <button id="btnUpload" class="btn" disabled>Persbericht uploaden</button>
+        <button id="btnEdit" class="btn" disabled>Document bewerken</button>
+        <button id="btnDownload" class="btn" disabled>Nieuwbericht downloaden</button>
+      </div>
+
+      <div id="snackbar" class="snackbar" aria-live="polite" aria-atomic="true">Bezig…</div>
+    </section>
+
+    <section class="card">
+      <h2>SIGNALEN</h2>
+      <ul id="signals" class="signals">
+        <li class="muted">Nog geen signalen.</li>
+      </ul>
+
+      <div id="w015hint" class="hintbox" hidden>
+        Let op: dit document lijkt mogelijk meer dan één persbericht te bevatten. Controleer of er na een duidelijke scheiding een nieuw bericht begint.
+      </div>
+
+      <div class="techbox">
+        <div class="techhead">
+          <strong>Technische informatie</strong>
+          <button id="btnDownloadLog" class="btn small" disabled>Download log</button>
+        </div>
+        <pre id="techlog" class="techlog">(nog geen log)</pre>
+        <p class="smalltext">Kopieer de technische informatie/logs en stuur deze naar de beheerder van deze site.</p>
+      </div>
+    </section>
+
+    <section class="card" id="editorCard" hidden>
+      <h2>Document bewerken</h2>
+      <p class="smalltext">Pas de brontekst aan en verwerk opnieuw. De tool slaat niets op.</p>
+      <textarea id="editor" class="editor" spellcheck="false"></textarea>
+      <div class="row">
+        <button id="btnReprocess" class="btn">Opnieuw verwerken</button>
+        <button id="btnCloseEditor" class="btn secondary">Sluiten</button>
+      </div>
+    </section>
+
+    <section class="card" id="outputCard" hidden>
+      <h2>Resultaat</h2>
+      <textarea id="output" class="output" spellcheck="false" readonly></textarea>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Deze tool genereert concepten en géén automatische eindpublicaties. De redactie blijft verantwoordelijk voor eindredactie en feitelijke controle.
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
