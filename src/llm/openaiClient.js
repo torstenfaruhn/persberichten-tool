@@ -31,17 +31,20 @@ async function generateStructured({apiKey,instructions,input,model,retryOnce}){
     const txt=await callLLM({apiKey,instructions,input,model});
     const p=safeParse(txt||'');
     if(p.ok) return {ok:true,data:p.data};
+
     if(retryOnce){
       const strictInstr=instructions+'\n\nBELANGRIJK: Je geeft alleen 1 JSON-object terug. Geen extra tekens ervoor of erna.';
       const txt2=await callLLM({apiKey,instructions:strictInstr,input,model});
       const p2=safeParse(txt2||'');
       if(p2.ok) return {ok:true,data:p2.data};
     }
-    return {ok:false,errorCode:'W010',techHelp:true};
-  }catch(_){
-    return {ok:false,errorCode:'W010',techHelp:true};
+
+    return {ok:false, ...classifyOpenAIError({})};
+  }catch(err){
+    return {ok:false, ...classifyOpenAIError(err)};
   }
 }
+
 module.exports={generateStructured};
 
 function classifyOpenAIError(err){
